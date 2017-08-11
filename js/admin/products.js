@@ -116,7 +116,7 @@ function ProductTabsManager(){
 			}
 			return $.ajax({
 				url : $('#link-' + tab_name).attr('href') + '&ajax=1' + ($('#page').length ? '&page=' + parseInt($('#page').val()) : '') + '&rand=' + + new Date().getTime(),
-				async : true,
+				async : false, // slow down the ajax calls for slow servers
 				cache: false, // cache needs to be set to false or IE will cache the page with outdated product values
 				type: send_type,
 				headers: { "cache-control": "no-cache" },
